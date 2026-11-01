@@ -1,0 +1,34 @@
+{
+  "name": "light-assistant",
+  "version": "1.0.0",
+  "description": "LIGHT - a secure, personal autonomous AI assistant (Express + MySQL + Google sign-in)",
+  "type": "module",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js",
+    "db:create": "node database/create-db.js",
+    "migrate": "node database/migrate.js",
+    "test": "node --test tests/commandEngine.test.js",
+    "test:integration": "node --test tests/security.integration.test.js",
+    "test:all": "node --test tests/commandEngine.test.js tests/security.integration.test.js"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "express-rate-limit": "^7.5.0",
+    "express-session": "^1.18.1",
+    "google-auth-library": "^9.15.0",
+    "helmet": "^8.0.0",
+    "multer": "^1.4.5-lts.1",
+    "mysql2": "^3.11.5",
+    "zod": "^3.24.1"
+  },
+  "devDependencies": {
+    "cookie-signature": "^1.2.2"
+  },
+  "license": "MIT"
+}
